@@ -1,49 +1,33 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/hp/AndroidStudioProjects/FlutterProjects/flutter_first_app/lib/widgets/drawer.header.dart';
 import 'file:///C:/Users/hp/AndroidStudioProjects/FlutterProjects/flutter_first_app/lib/widgets/drawer.widget.dart';
 
 void main() {
-  runApp( MaterialApp(
-    title: 'my first app',
-    theme: ThemeData(
-        primarySwatch: Colors.pink,
-        textTheme: TextTheme(
-            bodyText2: TextStyle(
-                fontSize: 18,
-                color: Colors.pinkAccent
-            )
-        )
-    ),
-  ));
+  runApp(new MyApp());
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  MaterialApp(
+      title: 'my first app',
+      theme: ThemeData(
+          primarySwatch: Colors.pink,
+          textTheme: TextTheme(
+              bodyText2: TextStyle(
+                  fontSize: 18,
+                  color: Colors.pinkAccent
+              )
+          )
+      ),
+    home:Scaffold(
         drawer: MyDrawerWidget(),
         appBar: AppBar(title: Text("Home Page"),),
         body: Center(
           child: Text("Yeah im working !"),
         ),
-        floatingActionButton: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              FloatingActionButton(
-                child: Icon(Icons.remove),
-                onPressed: (){
 
-                },
-              ),
-              SizedBox(width: 6,),
-              FloatingActionButton(
-                child: Icon(Icons.add),
-                onPressed: (){
-
-                },
-              ),
-            ],
+            
         ),
     );
   }
