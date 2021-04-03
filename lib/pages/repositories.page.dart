@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class GitRepoPage extends StatefulWidget {
   String login;
   String avatar;
-  GitRepoPage({this.login,this.avatar});
+  GitRepoPage({this.login});
 
   @override
   _GitRepoPageState createState() => _GitRepoPageState();
@@ -21,7 +21,7 @@ class _GitRepoPageState extends State<GitRepoPage> {
     loadRepositories();
   }
   void loadRepositories() async{
-    String url = "https://api.github.com/search/users/${widget.login}}/repos";
+    String url = "https://api.github.com/users/${widget.login}/repos";
     http.Response response = await http.get(Uri.parse(url));
     if(response.statusCode == 200){
       setState(() {
@@ -36,14 +36,14 @@ class _GitRepoPageState extends State<GitRepoPage> {
       appBar: AppBar(title:Text("Repositories ${widget.login}"),),
       body: Center(
         child: ListView.separated(
-            itemBuilder: (context,index)=>ListTile(
-              title:Text("${dataRepositories[index]['name']}"),
+            itemBuilder: (context,index)=> ListTile(
+              title : Text("${dataRepositories[index]['name']}"),
             ),
             separatorBuilder: (context,index) =>Divider(
               height: 2,
-              color: Colors.purpleAccent,
+              color : Colors.red
             ),
-            itemCount: dataRepositories==null?0:dataRepositories.length,
+            itemCount: dataRepositories==null?0:dataRepositories.length
         )
       ),
     );

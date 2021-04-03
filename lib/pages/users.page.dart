@@ -117,12 +117,11 @@ class _UsersPageState extends State<UsersPage> {
                 itemBuilder:(context,index){
                     return ListTile(
                       onTap: (){
-                        Navigator.pushReplacement(
+                        Navigator.push(
                             context,
                             MaterialPageRoute(builder:
                                 (context) =>
-                                    GitRepoPage(login: items[index]['login'],
-                                        avatar:items[index]['avatar_url'])
+                                    GitRepoPage(login: items[index]['login'],)
                             )
                         );
                       },
