@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
       drawer: MyDrawerWidget(),
       appBar: AppBar(title:Text("Home"),),
       body: Center(
-        child: Text("Home"),
+        child: Text("Im in Home"),
       ),
 
     );

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_first_app/pages/counter.page.dart';
 import 'package:flutter_first_app/pages/home.page.dart';
+import 'package:flutter_first_app/pages/users.page.dart';
 
 import 'drawer.header.dart';
+
 
 class MyDrawerWidget extends StatelessWidget {
   @override
@@ -43,6 +45,10 @@ class MyDrawerWidget extends StatelessWidget {
                 //la petite fléche à droite
                 trailing: Icon(Icons.arrow_right,color:Colors.purple),
                 title: Text("Users",style:TextStyle(fontSize: 18,color: Colors.purple)),
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context, MaterialPageRoute(builder: (context) => UsersPage()));
+                }
               )
             ]
         )

@@ -8,7 +8,7 @@ class MyDrawerHeaderWidget extends StatelessWidget {
           gradient : LinearGradient(
               colors: [
                 Colors.pinkAccent,
-                Colors.white
+                Colors.purpleAccent
               ]
           )
       ),
