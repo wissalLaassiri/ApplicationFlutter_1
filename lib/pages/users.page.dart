@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_first_app/pages/repositories.page.dart';
+import 'file:///C:/Users/hp/AndroidStudioProjects/FlutterProjects/flutter_first_app/lib/pages/repositories/repositories.page.dart';
 import 'package:flutter_first_app/widgets/drawer.widget.dart';
 import 'package:http/http.dart' as http;
 class UsersPage extends StatefulWidget {
@@ -11,6 +11,7 @@ class UsersPage extends StatefulWidget {
 
 class _UsersPageState extends State<UsersPage> {
   String query;
+  String title;
   bool notInvisible = false;
   TextEditingController queryTextEditingController = new TextEditingController();
   dynamic data = null;//data qui contient tout ce je veux
@@ -54,9 +55,8 @@ class _UsersPageState extends State<UsersPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: MyDrawerWidget(),
         appBar: AppBar(
-          title:Text("$query : $currentPage / $totalPage"),
+          title:query==null?Text("Users"):Text("$query"),
         ),
         body: Center(
           child: Column(
@@ -121,7 +121,7 @@ class _UsersPageState extends State<UsersPage> {
                             context,
                             MaterialPageRoute(builder:
                                 (context) =>
-                                    GitRepoPage(login: items[index]['login'],)
+                                    GitRepoPage(login: items[index]['login'],avatar: items[index]['avatar_url'],)
                             )
                         );
                       },

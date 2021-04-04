@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_first_app/pages/counter.page.dart';
-import 'file:///C:/Users/hp/AndroidStudioProjects/FlutterProjects/flutter_first_app/lib/pages/home/home.page.dart';
+import 'package:flutter_first_app/pages/gallery/gallery.page.dart';
+import 'package:flutter_first_app/pages/home/home.page.dart';
 import 'package:flutter_first_app/pages/users.page.dart';
 
 import 'drawer.header.dart';
@@ -41,14 +42,28 @@ class MyDrawerWidget extends StatelessWidget {
               ),
               ListTile(
                 //l'icone du home à gauche
-                leading: Icon(Icons.supervised_user_circle,color: Colors.purple),
-                //la petite fléche à droite
-                trailing: Icon(Icons.arrow_right,color:Colors.purple),
-                title: Text("Users",style:TextStyle(fontSize: 18,color: Colors.purple)),
-                onTap: () {
-                  Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => UsersPage()));
-                }
+                  leading: Icon(Icons.supervised_user_circle,color: Colors.purple),
+                  //la petite fléche à droite
+                  trailing: Icon(Icons.arrow_right,color:Colors.purple),
+                  title: Text("Users",style:TextStyle(fontSize: 18,color: Colors.purple)),
+                  onTap: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => UsersPage()));
+                  }
+              ),
+              Divider(
+                  color : Colors.purpleAccent
+              ),
+              ListTile(
+                //l'icone du home à gauche
+                  leading: Icon(Icons.image,color: Colors.purple),
+                  //la petite fléche à droite
+                  trailing: Icon(Icons.arrow_right,color:Colors.purple),
+                  title: Text("Gallery",style:TextStyle(fontSize: 18,color: Colors.purple)),
+                  onTap: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => GalleryPage()));
+                  }
               )
             ]
         )
