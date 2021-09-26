@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/hp/AndroidStudioProjects/FlutterProjects/flutter_first_app/lib/widgets/drawer.widget.dart';
+import 'package:flutter_first_app/widgets/drawer.widget.dart';
 
 void main() {
   runApp(new MyApp());
@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'my first app',
       theme: ThemeData(
           primarySwatch: Colors.pink,
