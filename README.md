@@ -1,7 +1,17 @@
 # flutter_first_app
 
-A new Flutter project.
+This app is for searching cities pictures , to check weather, search github users.
 
+word-keys: 
+    - pixabay 
+    - openweathermap
+    - github users
+
+Tools:
+    - Flutter
+    - Dart
+    - Android 
+    
 ## Getting Started
 
 This project is a starting point for a Flutter application.
