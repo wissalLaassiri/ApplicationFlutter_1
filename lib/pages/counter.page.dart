@@ -11,10 +11,35 @@ class _CounterPageState extends State<CounterPage> {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: CounterState(),
+    );
+  }
+
+}
+
+class CounterState extends StatefulWidget {
+  @override
+  _CounterState createState() => _CounterState();
+}
+class _CounterState extends State<CounterState>{
+  int _counter = 0;
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
     return Scaffold(
-      drawer: MyDrawerWidget(),
-      appBar: AppBar(title:Text("Counter"),),
+      appBar: AppBar(
+        title:Text("Counter"),
+        backgroundColor: Colors.pink,
+      ),
       body: Center(
+<<<<<<< HEAD
         child: Text("I'm in Counter $counter")),
         floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -37,10 +62,28 @@ class _CounterPageState extends State<CounterPage> {
                 }
                 );
               },
+=======
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+>>>>>>> 391549f470a2e3f6d44564e55bd5244142f57c42
             ),
           ],
         ),
-
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+        backgroundColor: Colors.pink,
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
 }
